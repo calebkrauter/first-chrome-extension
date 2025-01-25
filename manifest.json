@@ -1,0 +1,19 @@
+{
+    "manifest_version": 3,
+    "name": "Red Page Extension",
+    "version": "1.0",
+    "description": "This extension changes the page background to red.",
+    "permissions": [
+        "activeTab"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ]
+}
