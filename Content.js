@@ -2,16 +2,27 @@
 // window.onload = () => {
 //     document.body.style.setProperty('background-color', 'red', 'important');
 // };
-window.onload = () => {
-    const elementsWithColor = {};
 
-    document.querySelectorAll("*").forEach(curElement => {
-        curColor = getComputedStyle(curElement);
-        if (curColor && curColor !== "rgb(0,0,0)" && curColor !== "rgb(0,0,0,0)") {
-            const elementName = curElement.id || curElement.className || curElement.tagName;
-            elementsWithColor[elementName] = curColor;
-        }
+window.onload = () => { }
+window.onload = getColors();
 
-    });
-    console.log(elementsWithColor);
-};
+function getColors() {
+
+    for (curElement of document.querySelectorAll("*")) {
+        curColor = window.getComputedStyle(curElement).color;
+        console.log("CUR COLOR" + curColor);
+    }
+}
+
+// window.onload = () => {
+//     document.querySelectorAll("*").forEach(curElement => {
+//         curColor = window.getComputedStyle(curElement).color;
+//         console.log("CUR COLOR " + curColor);
+//     });
+//     // console.log(elementColors);
+// };
+
+// function parseRGB(curColor) {
+//     const regex = /^(rgb\(([0-9][,\)]){3})$/;
+//     return curColor.match(regex);
+// }
